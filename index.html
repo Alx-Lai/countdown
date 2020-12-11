@@ -15,22 +15,29 @@
         <div class="main-wrapper">
             <section>
                 <form action="#" id='form'>
-                    <p>從</p>
-                    <input type="text" name="year">
-                    <p>年</p>
-                    <input type="text" name="month">
-                    <p>月</p>
-                    <input type="text" name="day">
-                    <p>日</p>
-                    <input type="text" name="hour">
-                    <p>時</p>
-                    <input type="text" name="minute">
-                    <p>分</p>
-                    <input type="text" name="second">
-                    <p>秒</p>
+                    <p>從
+                    <input type="text" name="year" size="6">
+                    年
+                    <input type="text" name="month" size="2">
+                    月
+                    <input type="text" name="day" size="2">
+                    日
+                    <input type="text" name="hour" size="2">
+                    時
+                    <input type="text" name="minute" size="2">
+                    分
+                    <input type="text" name="second" size="2">
+                    秒
                     <input type="submit" value="開始倒數">
+                    </p>
                 </form>
                 <p id="time"></p>
+                <form id="mode">
+                    <select name="select">
+                        <option value='1'>從指定時間倒數</option>
+                        <option value="2">倒數固定時間</option>
+                    </select>
+                </form>
             </section>
         </div><!--/.main-wrapper -->
         <script src="script.js"></script>
