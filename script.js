@@ -1,5 +1,6 @@
 //default value
 var start=0;
+var audio = document.getElementById('alarm');
 if(start==0){
     var timer = new Date();
     document.getElementById('form').year.value=timer.getFullYear();
@@ -24,9 +25,21 @@ var countdown= function(due,positive){
     var count = [days,hour,min,sec];
     return count;
 }
+var askpause = function(){
+    audio.play();
+    if(window.confirm("times UP!!!")){
+        audio.pause();
+    }else{
+        askpause();
+    } 
+}
 var realc = function(){
     var counter; 
     counter = countdown(goal,1);
+    if(counter[0]==0&&counter[1]==0&&counter[2]==0&&counter[3]==0){
+        audio.currentTime=0;
+        askpause();
+    }
     if(counter[0]>=0&&counter[1]>=0&&counter[2]>=0&&counter[3]>=0){
         document.getElementById('time').textContent=counter[0]+'天'+counter[1]+'時'+counter[2]+'分'+counter[3]+'秒';
     }else{
